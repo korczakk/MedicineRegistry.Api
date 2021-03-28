@@ -5,6 +5,10 @@ VisualStudioVersion = 16.0.31112.23
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MedicineRegistry.Api", "MedicineRegistry.Api\MedicineRegistry.Api.csproj", "{548FA69B-4F34-4D43-84DA-D935D1BAF301}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MedicineRegistry.Api.Domain", "MedicineRegistry.Api.Domain\MedicineRegistry.Api.Domain.csproj", "{00A79262-0E33-43D2-BD18-75BC0B1608CC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MedicineRegistry.Api.Infrastructure", "MedicineRegistry.Api.Infrastructure\MedicineRegistry.Api.Infrastructure.csproj", "{EA015271-1A1E-45FC-AB5C-59AEE6A81E0F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{548FA69B-4F34-4D43-84DA-D935D1BAF301}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{548FA69B-4F34-4D43-84DA-D935D1BAF301}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{548FA69B-4F34-4D43-84DA-D935D1BAF301}.Release|Any CPU.Build.0 = Release|Any CPU
+		{00A79262-0E33-43D2-BD18-75BC0B1608CC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{00A79262-0E33-43D2-BD18-75BC0B1608CC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{00A79262-0E33-43D2-BD18-75BC0B1608CC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{00A79262-0E33-43D2-BD18-75BC0B1608CC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EA015271-1A1E-45FC-AB5C-59AEE6A81E0F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EA015271-1A1E-45FC-AB5C-59AEE6A81E0F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EA015271-1A1E-45FC-AB5C-59AEE6A81E0F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EA015271-1A1E-45FC-AB5C-59AEE6A81E0F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

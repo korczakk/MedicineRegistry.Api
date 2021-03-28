@@ -1,6 +1,8 @@
-﻿using Microsoft.AspNetCore.Authorization;
+﻿using MedicineRegistry.Api.AppConfiguration;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Options;
 using Microsoft.Identity.Web.Resource;
 using System;
 using System.Collections.Generic;
@@ -19,20 +21,19 @@ namespace MedicineRegistry.Api.Controllers
             "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
         };
 
-    private readonly ILogger<WeatherForecastController> _logger;
+    private readonly ILogger<WeatherForecastController> logger;
+    private readonly IOptions<AzureAdOptions> azureAdOptions;
 
-    // The Web API will only accept tokens 1) for users, and 2) having the "access_as_user" scope for this API
-    static readonly string[] scopeRequiredByApi = new string[] { "access_as_user" };
-
-    public WeatherForecastController(ILogger<WeatherForecastController> logger)
+    public WeatherForecastController(ILogger<WeatherForecastController> logger, IOptions<AzureAdOptions> azureAdOptions)
     {
-      _logger = logger;
+      this.logger = logger;
+      this.azureAdOptions = azureAdOptions;
     }
 
     [HttpGet]
     public IEnumerable<WeatherForecast> Get()
     {
-      HttpContext.VerifyUserHasAnyAcceptedScope(scopeRequiredByApi);
+      HttpContext.VerifyUserHasAnyAcceptedScope(azureAdOptions.Value.Scopes);
 
       var rng = new Random();
       return Enumerable.Range(1, 5).Select(index => new WeatherForecast

@@ -1,3 +1,4 @@
+using MedicineRegistry.Api.AppConfiguration;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
@@ -31,12 +32,14 @@ namespace MedicineRegistry.Api
     {
       services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
           .AddMicrosoftIdentityWebApi(Configuration.GetSection("AzureAd"));
-
+      
       services.AddControllers();
       services.AddSwaggerGen(c =>
       {
         c.SwaggerDoc("v1", new OpenApiInfo { Title = "MedicineRegistry.Api", Version = "v1" });
       });
+
+      services.AddOptions<AzureAdOptions>().BindConfiguration("AzureAd");
     }
 
     // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -50,7 +53,7 @@ namespace MedicineRegistry.Api
       }
 
       app.UseHttpsRedirection();
-
+      
       app.UseRouting();
 
       app.UseAuthentication();
