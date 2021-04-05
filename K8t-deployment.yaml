@@ -3,19 +3,19 @@ kind: Deployment
 metadata:
   name: api-deployment
   labels:
-    app: medicine-registry.api
+    app: medicine-registry-api
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: medicine-registry.api
+      app: medicine-registry-api
   template:
     metadata:
       labels:
-        app: medicine-registry.api
+        app: medicine-registry-api
     spec:
       containers:
-      - name: medicine-registry.api
+      - name: medicine-registry-api
         image: kamilkorczakgmailcom/medicine.registry
         ports:
         - containerPort: 80
