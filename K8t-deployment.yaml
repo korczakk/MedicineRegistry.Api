@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
       - name: medicine-registry-api
-        image: kamilkorczakgmailcom/medicine.registry
+        image: kamilkorczakgmailcom/medicine.registry:latest
         ports:
         - containerPort: 80
