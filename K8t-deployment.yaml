@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: api-deployment
+  labels:
+    app: medicine-registry.api
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: medicine-registry.api
+  template:
+    metadata:
+      labels:
+        app: medicine-registry.api
+    spec:
+      containers:
+      - name: medicine-registry.api
+        image: kamilkorczakgmailcom / medicine.registry
+        ports:
+        - containerPort: 80
