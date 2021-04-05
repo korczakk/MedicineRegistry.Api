@@ -1,0 +1,11 @@
+1. Azure infrastructure
+- AKS
+- Azure DevOps pipelines (build, release)
+
+
+2. Handle Kubernetes cluster
+az login
+az account set --subscription "Visual Studio Professional"
+az aks get-credentials  --name medicine-registry --resource-group medicine-registry
+kubectl get pods
+kubectl exec --stdin --tty shell-demo -- /bin/bash
