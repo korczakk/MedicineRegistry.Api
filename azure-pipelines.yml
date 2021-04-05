@@ -24,6 +24,6 @@ stages:
       displayName: Build an image
       inputs:
         command: build
-        dockerfile: 'MedicineRegistry.Api/Dockerfile'
+        dockerfile: './Dockerfile'
         tags: |
           $(tag)
