@@ -1,4 +1,4 @@
-apiVersion: apps/v1
+apiVersion: v1
 kind: Deployment
 metadata:
   name: api-deployment
@@ -19,3 +19,15 @@ spec:
         image: kamilkorczakgmailcom/medicine.registry:latest
         ports:
         - containerPort: 80
+kind: Service
+apiVersion: v1
+metadata:
+  name: medicine-registry-service
+spec:
+  type: LoadBalancer
+  selector:
+    app: medicine-registry-api
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 80
